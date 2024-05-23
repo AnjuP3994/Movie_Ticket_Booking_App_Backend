@@ -8,6 +8,10 @@ exports.userBooking = async (req, res) => {
     const { seatNo } = req.body
     const { movieId } = req.params
     const id = req.payload  // userId
+    // Check if seatNo is provided
+    if (!seatNo) {
+        return res.status(400).json({ msg: "Seat number is required." });
+    }
     try {
         // Check if the user has already booked this movie
         const existingUserBookings = await booking.findOne({ userId: id });

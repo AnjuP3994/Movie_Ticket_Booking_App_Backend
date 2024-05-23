@@ -23,7 +23,7 @@ serverApp.use(router)
 serverApp.use('/uploads', express.static('./uploads'))  //to get images from backend to frontend
 
 //6. define port
-const PORT = 3003 || process.env.PORT
+const PORT = 3007 || process.env.PORT
 
 //7. listening on port
 serverApp.listen((PORT),(req,res)=>{
